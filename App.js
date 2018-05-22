@@ -1,8 +1,40 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, SafeAreaView } from 'react-native';
 import UZPlayer from './lib/uiza-sdk-react-native/UZPlayer';
+import Event from './lib/uiza-sdk-react-native/Event';
+import Utils from './lib/uiza-sdk-react-native/utils/Utils';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    self = this;
+
+    self.listener = {
+      onReady: function() {
+        console.log('onReady receive');
+        if (typeof self.player !== 'undefined') {
+          Utils.getOwnPropertyNames(self.player);
+        }
+      },
+      onLoad: function() {
+        console.log('onLoad receive');
+      },
+      onLoaded: function(evt) {
+        console.log('onLoaded receive: ', evt);
+      },
+      onFullscreenChange: function(evt) {
+        console.log('onFullscreenChange receive: ', evt);
+      },
+      onPlaybackChange: function(evt) {
+        // console.log('onPlaybackChange receive: ', evt);
+      },
+      onError: function(evt) {
+        console.log('onError receive: ', evt);
+      },
+    }
+  }
+
   render() {
     let api = 'YOUR_API';
     let appId = 'YOUR_APP_ID';
@@ -17,6 +49,7 @@ export default class App extends React.Component {
           playerId={playerId}
           entityId={entityId}
           style={styles.player}
+          listener={self.listener}
         />
         <ScrollView style={styles.description}>
           <Text>This is title</Text>
@@ -29,6 +62,8 @@ export default class App extends React.Component {
     );
   }
 }
+
+let self = null;
 
 const styles = StyleSheet.create({
   container: {
