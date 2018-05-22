@@ -28,7 +28,7 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 package-lock.json
-lib/uiza-sdk-react-native
+lib/uiza-sdk-react-native/
 
 # expo
 .expo/
