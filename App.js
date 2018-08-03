@@ -1,69 +1,86 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
 import UZPlayer from './lib/uiza-sdk-react-native/UZPlayer';
-import Event from './lib/uiza-sdk-react-native/Event';
-import Utils from './lib/uiza-sdk-react-native/utils/Utils';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    self = this;
+    let self = this;
 
-    self.listener = {
-      onReady: function() {
-        console.log('onReady receive');
-        if (typeof self.player !== 'undefined') {
-          Utils.getOwnPropertyNames(self.player);
-        }
-      },
-      onLoad: function() {
-        console.log('onLoad receive');
-      },
-      onLoaded: function(evt) {
-        console.log('onLoaded receive: ', evt);
-      },
-      onFullscreenChange: function(evt) {
-        console.log('onFullscreenChange receive: ', evt);
-      },
-      onPlaybackChange: function(evt) {
-        // console.log('onPlaybackChange receive: ', evt);
-      },
-      onError: function(evt) {
-        console.log('onError receive: ', evt);
-      },
-    }
+    this.listenerVod = {
+      onReady: function() { },
+      onLoad: function() { },
+      onLoaded: function(evt) { },
+      onFullscreenChange: function(evt) { },
+      onPlaybackChange: function(evt) { },
+      onError: function(evt) { },
+    };
+
+    this.listenerLive = {
+      onReady: function() { },
+      onLoad: function() { },
+      onLoaded: function(evt) { },
+      onFullscreenChange: function(evt) { },
+      onPlaybackChange: function(evt) { },
+      onError: function(evt) { },
+    };
   }
 
   render() {
-    let api = 'YOUR_API';
-    let appId = 'YOUR_APP_ID';
-    let playerId = 'YOUR_PLAYER_ID';
-    let entityId = 'YOUR_ENTITY_ID';
+    const api = 'BASE64_YOUR_API';
+    const token = 'YOUR_TOKEN';
+    const appId = 'YOUR_APP_ID';
+
+    // vod config
+    const entityIdVod = 'YOUR_VOD_ENTITY_ID';
+
+    // live config
+    const entityIdLive = 'YOUR_LIVE_ENTITY_ID';
+    const feedId = 'YOUR_FEED_ID';
+    const streamName = 'YOUR_STREAM_NAME';
+    const region = 'YOUR_REGION';
 
     return (
       <SafeAreaView style={styles.container}>
+        <Text>This is VOD demo</Text>
         <UZPlayer
+          debug={true}
+          token={token}
           api={api}
           appId={appId}
-          playerId={playerId}
-          entityId={entityId}
+          stream='vod'
+          entityId={entityIdVod}
           style={styles.player}
-          listener={self.listener}
+          ref={
+            component => {
+              this.playerVod = component;
+            }
+          }
+          listener={this.listenerVod}
         />
-        <ScrollView style={styles.description}>
-          <Text>This is title</Text>
-          <Text>_____________________________</Text>
-          <Text>This is description.</Text>
-          <Text>Line 2.</Text>
-          <Text>Line 3.</Text>
-        </ScrollView>
+        <Text>This is Live demo</Text>
+        <UZPlayer
+          token={token}
+          api={api}
+          appId={appId}
+          stream='live'
+          entityId={entityIdLive}
+          feedId={feedId}
+          streamName={streamName}
+          region={region}
+          style={styles.player}
+          ref={
+            component => {
+              this.playerLive = component;
+            }
+          }
+          listener={this.listenerLive}
+        />
       </SafeAreaView>
     );
   }
 }
-
-let self = null;
 
 const styles = StyleSheet.create({
   container: {

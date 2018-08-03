@@ -1,14 +1,21 @@
 ## How to use?
-Copy Uiza SDK to `lib/uiza-sdk-react-native/`
-
 Change variables on file `App.js`:
 ```
-let api = 'YOUR_API';
-let appId = 'YOUR_APP_ID';
-let playerId = 'YOUR_PLAYER_ID';
-let entityId = 'YOUR_ENTITY_ID';
-```
+const api = 'BASE64_YOUR_DOMAIN_API';
+const token = 'YOUR_TOKEN';
+const appId = 'YOUR_APP_ID';
 
+// vod config
+const entityIdVod = 'YOUR_VOD_ENTITY_ID';
+
+// live config
+const entityIdLive = 'YOUR_LIVE_ENTITY_ID';
+const feedId = 'YOUR_FEED_ID';
+const streamName = 'YOUR_STREAM_NAME';
+const region = 'YOUR_REGION';
+```
+Run
++ npm start
 ---
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
