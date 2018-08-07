@@ -45,7 +45,6 @@ export default class App extends React.Component {
       <SafeAreaView style={styles.container}>
         <Text>This is VOD demo</Text>
         <UZPlayer
-          debug={true}
           token={token}
           api={api}
           appId={appId}
