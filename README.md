@@ -13,6 +13,7 @@ const entityIdLive = 'YOUR_LIVE_ENTITY_ID';
 const feedId = 'YOUR_FEED_ID';
 const streamName = 'YOUR_STREAM_NAME';
 const region = 'YOUR_REGION';
+const playerId = 'YOUR_PLAYER_ID';
 ```
 Run
 + npm start
