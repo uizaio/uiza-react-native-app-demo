@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, SafeAreaView } from 'react-native';
-import UZPlayer from './lib/uiza-sdk-react-native/UZPlayer';
+import  UZPlayer from '@uiza/uiza-sdk-player-react-native';
+import { Dimensions, Platform } from 'react-native';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,12 +10,12 @@ export default class App extends React.Component {
     let self = this;
 
     this.listenerVod = {
-      onReady: function() { },
-      onLoad: function() { },
-      onLoaded: function(evt) { },
-      onFullscreenChange: function(evt) { },
-      onPlaybackChange: function(evt) { },
-      onError: function(evt) { },
+      onReady: function() { console.log('onReady call'); },
+      onLoad: function() { console.log('onLoad call'); },
+      onLoaded: function(evt) { console.log('onLoaded call', evt); },
+      onFullscreenChange: function(evt) { console.log('onLoaded call', evt); },
+      onPlaybackChange: function(evt) { console.log('onLoaded call', evt); },
+      onError: function(evt) { console.log('onLoaded call', evt); },
     };
 
     this.listenerLive = {
@@ -40,11 +41,13 @@ export default class App extends React.Component {
     const feedId = 'YOUR_FEED_ID';
     const streamName = 'YOUR_STREAM_NAME';
     const region = 'YOUR_REGION';
+    const playerId = 'YOUR_PLAYER_ID';
 
     return (
       <SafeAreaView style={styles.container}>
-        <Text>This is VOD demo</Text>
+        <Text style={{marginTop: isAndroid()? 0 : isIphoneX()? 0 : 20}}>This is VOD demo</Text>
         <UZPlayer
+          debug={true}
           token={token}
           api={api}
           appId={appId}
@@ -57,8 +60,9 @@ export default class App extends React.Component {
             }
           }
           listener={this.listenerVod}
+          playerId={playerId}
         />
-        <Text>This is Live demo</Text>
+        <Text style={{marginTop: isAndroid()? 0 : isIphoneX()? 0 : 20}}>This is Live demo</Text>
         <UZPlayer
           token={token}
           api={api}
@@ -75,11 +79,34 @@ export default class App extends React.Component {
             }
           }
           listener={this.listenerLive}
+          playerId={playerId}
         />
       </SafeAreaView>
     );
   }
 }
+
+export const isIphoneX = () => {
+  let d = Dimensions.get('window');
+  const { height, width } = d;
+
+  return (
+    // This has to be iOS duh
+    Platform.OS === 'ios' &&
+
+    // Accounting for the height in either orientation
+    (height === 812 || width === 812)
+  );
+}
+
+export const isAndroid = () => {
+  let d = Dimensions.get('window');
+  return (
+    // This has to be iOS duh
+    Platform.OS === 'android'
+  );
+}
+
 
 const styles = StyleSheet.create({
   container: {

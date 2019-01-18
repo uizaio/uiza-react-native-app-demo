@@ -13,7 +13,8 @@
   "devDependencies": {
     "react-native-scripts": "1.14.0",
     "jest-expo": "~27.0.0",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.3.1",
+    "babel-preset-expo": "^4.0.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -27,9 +28,10 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^27.0.1",
+    "@uiza/uiza-sdk-player-react-native": "0.1.5",
+    "expo": "28.0.0",
+    "expo-cli": "^2.6.6",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
-    "react-native-svg": "6.5.0"
+    "react-native": "^0.55.4"
   }
 }
