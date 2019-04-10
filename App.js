@@ -29,8 +29,10 @@ export default class App extends React.Component {
   }
 
   render() {
-    const api = 'BASE64_YOUR_API';
+    // get from email at registration
+    const api = 'YOUR_API_DOMAIN';
     const token = 'YOUR_TOKEN';
+    // get from email at registration
     const appId = 'YOUR_APP_ID';
 
     // vod config

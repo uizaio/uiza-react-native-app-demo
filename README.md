@@ -1,8 +1,10 @@
 ## How to use?
 Change variables on file `App.js`:
 ```
-const api = 'BASE64_YOUR_DOMAIN_API';
+// get from email at registration
+const api = 'YOUR_API_DOMAIN';
 const token = 'YOUR_TOKEN';
+// get from email at registration
 const appId = 'YOUR_APP_ID';
 
 // vod config

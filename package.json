@@ -1,7 +1,7 @@
 {
   "name": "uiza-react-native-app-demo",
   "description": "A demo application react native",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/uizaio/uiza-react-native-app-demo",
   "copyright": "Copyright Uiza Pte. Ltd. <https://www.uiza.io/>",
   "authors": "Uiza Pte. Ltd.",
@@ -28,7 +28,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@uiza/uiza-sdk-player-react-native": "0.1.5",
+    "@uiza/uiza-sdk-player-react-native": "0.2.7-rc.4",
     "expo": "28.0.0",
     "expo-cli": "^2.6.6",
     "react": "16.3.1",
