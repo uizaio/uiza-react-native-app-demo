@@ -2,7 +2,6 @@
 Change variables on file `App.js`:
 ```
 // get from email at registration
-const api = 'YOUR_API_DOMAIN';
 const token = 'YOUR_TOKEN';
 // get from email at registration
 const appId = 'YOUR_APP_ID';
