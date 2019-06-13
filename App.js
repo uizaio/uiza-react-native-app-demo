@@ -30,7 +30,6 @@ export default class App extends React.Component {
 
   render() {
     // get from email at registration
-    const api = 'YOUR_API_DOMAIN';
     const token = 'YOUR_TOKEN';
     // get from email at registration
     const appId = 'YOUR_APP_ID';
@@ -51,7 +50,7 @@ export default class App extends React.Component {
         <UZPlayer
           debug={true}
           token={token}
-          api={api}
+          apiVersion={4}
           appId={appId}
           stream='vod'
           entityId={entityIdVod}
@@ -67,7 +66,7 @@ export default class App extends React.Component {
         <Text style={{marginTop: isAndroid()? 0 : isIphoneX()? 0 : 20}}>This is Live demo</Text>
         <UZPlayer
           token={token}
-          api={api}
+          apiVersion={4}
           appId={appId}
           stream='live'
           entityId={entityIdLive}
