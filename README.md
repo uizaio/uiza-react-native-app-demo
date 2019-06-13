@@ -1,4 +1,13 @@
 ## How to use?
+
+* Install CNPM from [cnpm](https://cnpmjs.org)
+* Install [exp-cli](https://github.com/react-community/create-react-native-app)
+* Add ~/.npm_package/bin into $PATH in .bash_profile in Mac and Linux enviroment if needed.
+* In project folder, run `npm install` to install requirement packages.
+* In project folder, run `npm run ios` for IOS and `npm run android` for Android.
+
+
+
 Change variables on file `App.js`:
 ```
 // get from email at registration
