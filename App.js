@@ -30,10 +30,10 @@ export default class App extends React.Component {
 
   render() {
     // get from email at registration
-    const api = 'YOUR_API_DOMAIN';
-    const token = 'YOUR_TOKEN';
+    const api = 'ap-southeast-1-api.uiza.c';
+    const token = 'uap-9ee4c164e3944ad781ddcafbfad91a0d-1ac7c3ff';
     // get from email at registration
-    const appId = 'YOUR_APP_ID';
+    const appId = '9ee4c164e3944ad781ddcafbfad91a0d';
 
     // vod config
     const entityIdVod = 'YOUR_VOD_ENTITY_ID';
