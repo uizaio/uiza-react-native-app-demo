@@ -6,6 +6,8 @@
 * In project folder, run `npm install` to install requirement packages.
 * In project folder, run `npm run ios` for IOS and `npm run android` for Android.
 
+## Please downgrade expo client to v28:
+* Reference: [The way to downgrade expo client on Android](https://dev.to/sasurau4/the-way-to-downgrade-expo-client-on-android-2mca)
 
 
 Change variables on file `App.js`:
