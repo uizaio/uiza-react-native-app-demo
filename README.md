@@ -29,7 +29,10 @@ const region = 'YOUR_REGION';
 const playerId = 'YOUR_PLAYER_ID';
 ```
 Run
-+ npm start
+
+* npm start
+
+### More info
 ---
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
