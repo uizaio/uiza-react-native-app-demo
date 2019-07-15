@@ -1,3 +1,6 @@
+### 0.2.9-rc.4 (2019-07-11)
+- Update readme
+
 ### 0.2.9-rc.3 (2019-07-11)
 - Manual set screen orientation:
 
