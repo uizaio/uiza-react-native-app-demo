@@ -15,7 +15,7 @@ export default class VODScreen extends React.Component {
       onReady: function() { console.log('onReady call'); },
       onLoad: function() { console.log('onLoad call'); },
       onLoaded: function(evt) { console.log('onLoaded call', evt); },
-      onFullscreenChange: function(evt) { console.log('onLoaded call', evt); },
+      onFullscreenChange: function(fullScreen) { console.log('fullScreen call: ', fullScreen); },
       onPlaybackChange: function(evt) { console.log('onLoaded call', evt); },
       onError: function(evt) { console.log('onLoaded call', evt); },
     };

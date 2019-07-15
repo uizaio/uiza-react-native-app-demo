@@ -11,7 +11,7 @@
 
 
 
-Change variables on file `App.js`:
+Change variables on file `Constants.js`:
 ```
 // get from email at registration
 const token = 'YOUR_TOKEN';
