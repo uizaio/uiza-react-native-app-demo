@@ -28,10 +28,11 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@uiza/uiza-sdk-player-react-native": "0.2.8-rc.2",
+    "@uiza/uiza-sdk-player-react-native": "0.2.9-rc.3",
     "expo": "28.0.0",
     "expo-cli": "^2.6.6",
     "react": "16.3.1",
-    "react-native": "^0.55.4"
+    "react-native": "^0.55.4",
+    "react-navigation": "^3.11.0"
   }
 }
