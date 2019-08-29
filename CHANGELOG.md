@@ -1,3 +1,6 @@
+### 0.3.0-rc.1 (2019-08-29)
+- Upgrade Expo to v34
+
 ### 0.2.9-rc.4 (2019-07-11)
 - Update readme
 
@@ -8,15 +11,19 @@
 
     ```
     onFullscreenChange: function(fullscreen) {
+
         // manual control fullscreen state.
 
         if(!fullscreen){
+
           //ScreenOrientation.allow(ScreenOrientation.Orientation.PORTRAIT_UP);
+
         }
+
       }
       ```
-      
-    Note:
+
+      Note:
       `import { ScreenOrientation } from "expo";`
 
 ### 0.2.9-rc.2 (2019-07-10)
